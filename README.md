@@ -26,13 +26,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Server-side routing & Middleware
+
+
 - [ ] Describe Middleware?
+
+Middleware allows for certain actions to happen before something is executed in the code.  It allows for conditions to be met & can stop certain actions if certain conditions aren't met. 
+
 
 - [ ] Describe a Resource?
 
+It's a particular piece of information/data that can be accessed in the API.
+
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+Status messages.
+
+
 - [ ] How can we partition our application into sub-applications?
+Express Routers, we can set up seperate routers for different resources and then import them into the main server file.
+
 
 ## Project Setup
 
