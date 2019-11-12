@@ -10,6 +10,7 @@ const router = express.Router();
 
 router.post("/", (req, res) => {}); // CREATE data
 
+// GET :: /api/actions
 router.get("/", (req, res) => {
   db.get()
     .then(actions => {
@@ -18,6 +19,22 @@ router.get("/", (req, res) => {
     .catch(err => {
       res.status(500).json({
         message: "Error retrieving actions."
+      });
+    });
+}); // READ data
+
+// GET :: /api/actions/:id
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.get(id)
+    .then(action => {
+      res.status(200).json(action);
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Error getting user",
+        err
       });
     });
 }); // READ data
