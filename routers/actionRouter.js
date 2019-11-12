@@ -25,3 +25,5 @@ router.get("/", (req, res) => {
 router.put("/", (req, res) => {}); // UPDATE data
 
 router.delete("/", (req, res) => {}); // DESTORYING data
+
+module.exports = router;
