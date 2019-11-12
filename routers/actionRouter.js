@@ -12,12 +12,12 @@ router.post("/", (req, res) => {}); // CREATE data
 
 router.get("/", (req, res) => {
   db.get()
-    .then(action  => {
-      res.status(200).json(action );
+    .then(actions => {
+      res.status(200).json(actions);
     })
     .catch(err => {
       res.status(500).json({
-        message: "Error retrieving action."
+        message: "Error retrieving actions."
       });
     });
 }); // READ data
