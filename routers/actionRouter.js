@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
         message: "Error retrieving actions."
       });
     });
-}); // READ data
+}); // READ data, pass
 
 // GET :: /api/actions/:id
 router.get("/:id", (req, res) => {
@@ -35,7 +35,7 @@ router.get("/:id", (req, res) => {
         err
       });
     });
-}); // READ data
+}); // READ data, pass
 
 // post to :: /api/actions
 router.post("/", (req, res) => {
@@ -48,7 +48,7 @@ router.post("/", (req, res) => {
         message: "Error adding action"
       });
     });
-}); // CREATE data
+}); // CREATE data, pass
 
 router.put("/", (req, res) => {}); // UPDATE data
 
