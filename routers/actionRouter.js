@@ -8,8 +8,6 @@ const router = express.Router();
 
 // CRUD operations
 
-router.post("/", (req, res) => {}); // CREATE data
-
 // GET :: /api/actions
 router.get("/", (req, res) => {
   db.get()
@@ -38,6 +36,19 @@ router.get("/:id", (req, res) => {
       });
     });
 }); // READ data
+
+// post to :: /api/actions
+router.post("/", (req, res) => {
+  db.insert(req.body)
+    .then(action => {
+      res.status(201).json(action);
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Error adding action"
+      });
+    });
+}); // CREATE data
 
 router.put("/", (req, res) => {}); // UPDATE data
 
