@@ -12,8 +12,8 @@ router.post("/", (req, res) => {}); // CREATE data
 
 router.get("/", (req, res) => {
   db.get()
-    .then(actions => {
-      res.status(200).json(actions);
+    .then(action  => {
+      res.status(200).json(action );
     })
     .catch(err => {
       res.status(500).json({
