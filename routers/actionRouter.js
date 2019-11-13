@@ -50,7 +50,16 @@ router.post("/", (req, res) => {
     });
 }); // CREATE data, pass
 
-router.put("/", (req, res) => {}); // UPDATE data
+// UPDATE :: /api/actions/:id
+router.put("/:id", (req, res) => {
+  db.update(req.params.id, req.body)
+    .then(update => {
+      res.status(200).json(update);
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Error updating action", err });
+    });
+}); // UPDATE data
 
 router.delete("/", (req, res) => {}); // DESTORYING data
 
