@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: "Error getting user",
+        message: "Error getting action",
         err
       });
     });
@@ -61,13 +61,14 @@ router.put("/:id", (req, res) => {
     });
 }); // UPDATE data
 
+// DELETE /api/actions/:id 
 router.delete("/:id", (req, res) => {
   db.remove(req.params.id)
     .then(deleted => {
       res.status(200).json(deleted);
     })
     .catch(err => {
-      res.status(500).json({ message: "Error deleting", err });
+      res.status(500).json({ message: "Error deleting action", err });
     });
 }); // DESTORYING data
 
